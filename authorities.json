@@ -1,0 +1,60 @@
+{
+    "Police": {
+      "name": "City Police Department",
+      "contact": "911",
+      "keywords": [
+        "theft", "robbery", "assault", "burglary", "murder", "kill", "hit",
+        "kidnapping", "hostage", "domestic violence", "shooting", "stabbing",
+        "missing person", "gang activity", "drug dealing", "human trafficking",
+        "child abuse", "hate crime", "arson", "vandalism", "weapon", "gunshot",
+        "explosion", "terrorism", "riot", "harassment", "extortion", "blackmail",
+        "carjacking", "hit and run", "poaching", "cyberbullying", "homicide",
+        "mugging", "sexual assault", "rape", "abduction", "bomb threat",
+        "disturbance", "fraud", "counterfeit", "forgery", "pickpocket", "threat"
+      ]
+    },
+    "Financial": {
+      "name": "Financial Fraud Department",
+      "contact": "1-800-FRAUD",
+      "keywords": [
+        "fraud", "scam", "money laundering", "embezzlement", "identity theft",
+        "phishing", "ponzi scheme", "pyramid scheme", "credit card fraud",
+        "bank fraud", "tax evasion", "insider trading", "forex scam",
+        "cryptocurrency scam", "investment fraud", "insurance fraud",
+        "mortgage fraud", "charity fraud", "invoice scam", "fake checks",
+        "credit score scam", "debt collection scam", "social security fraud",
+        "wire fraud", "securities fraud", "bribery", "corruption", "kickback",
+        "account takeover", "skimming", "ransomware", "dark web transaction"
+      ]
+    },
+    "General": {
+      "name": "General Affairs",
+      "contact": "123-456-7890",
+      "keywords": [
+        "vandalism", "disturbance", "noise complaint", "public nuisance",
+        "illegal parking", "stray animals", "road damage", "streetlight outage",
+        "garbage disposal", "public intoxication", "trespassing", "loitering",
+        "illegal dumping", "graffiti", "public smoking", "fire hazard",
+        "building code violation", "public urination", "begging",
+        "illegal street vendor", "tree removal", "park maintenance",
+        "public transportation issue", "sidewalk obstruction",
+        "animal cruelty", "lost property", "public indecency"
+      ]
+    },
+    "Ambulance": {
+      "name": "Emergency Medical Services",
+      "contact": "102",
+      "keywords": [
+        "injured", "hurt", "accident", "bleeding", "unconscious",
+        "heart attack", "stroke", "choking", "allergic reaction",
+        "poisoning", "fracture", "burn", "seizure", "difficulty breathing",
+        "overdose", "pregnancy emergency", "diabetic emergency",
+        "head trauma", "spinal injury", "electric shock", "drowning",
+        "hypothermia", "heat stroke", "suicide attempt", "mental health crisis",
+        "childbirth", "asthma attack", "epilepsy", "internal bleeding",
+        "amputation", "animal attack", "industrial accident", "crush injury",
+        "respiratory distress", "cardiac arrest", "drug reaction",
+        "radiation exposure", "chemical exposure"
+      ]
+    }
+  }
