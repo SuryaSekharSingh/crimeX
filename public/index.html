@@ -1,39 +1,32 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crime Reporting System</title>
+  <link rel="stylesheet" href="styles.css" />
   <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-  <h1>Report a Crime</h1>
-  <form id="crimeForm">
-    <label for="type">Crime Type:</label>
-    <input type="text" id="type" name="type" required /><br /><br />
-<!-- 
-    <label for="">Select Department:</label>
-    <select id="dept">
-        <option value="Police">Select</option>
-        <option value="Police">Police</option>
-        <option value="Ambulance">Ambulance</option>
-        <option value="General">General Affairs</option>
-        <option value="Financial">Financial</option>
-    </select>
+  <div class="container">
+    <h1>🚨 Report a Crime</h1>
+    <form id="crimeForm">
+      <label for="type">Crime Type:</label>
+      <input type="text" id="type" name="type" required />
 
-    <br/><br/> -->
-    
-    <label for="location">Location:</label>
-    <input type="text" id="location" name="location" required /><br /><br />
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required />
 
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" required></textarea><br /><br />
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
 
-    <button type="submit">Submit Report</button>
-  </form>
+      <label for="phone">Phone Number (Optional):</label>
+      <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" />
 
-  <p id="response"></p>
+      <button type="submit">🚔 Submit Report</button>
+    </form>
+    <p id="response"></p>
+  </div>
 
   <script>
     const socket = io();
@@ -45,6 +38,7 @@
         type: document.getElementById('type').value,
         location: document.getElementById('location').value,
         description: document.getElementById('description').value,
+        phone: document.getElementById('phone').value || null,
         timestamp: new Date().toISOString()
       };
 

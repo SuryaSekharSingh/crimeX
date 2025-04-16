@@ -72,11 +72,13 @@ io.on('connection', (socket) => {
     const department = determineDepartment(report);
     console.log(`Routing to ${department}`);
     
+
     const notification = {
       ...report,
       department,
       id: Date.now().toString(36) + Math.random().toString(36).substr(2)
     };
+  
 
     // Store notification
     if (!notificationHistory.has(department)) {
@@ -94,7 +96,7 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
+const PORT = 3000;
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });

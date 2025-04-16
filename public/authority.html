@@ -4,29 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authority Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
   <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-  <h1>Authority Dashboard</h1>
-  <div>
-    <label for="department">Department: </label>
-    <select id="department">
-      <option value="Police">Police</option>
-      <option value="Ambulance">Ambulance</option>
-      <option value="Financial">Financial</option>
-      <option value="General">General</option>
-    </select>
-    <button id="registerBtn">Register</button>
+  <div class="container">
+    <h1>🛡️ Authority Dashboard</h1>
+    <div class="authority-section">
+      <label for="department">Select Department:</label>
+      <select id="department">
+        <option value="Police">Police</option>
+        <option value="Ambulance">Ambulance</option>
+        <option value="Financial">Financial</option>
+        <option value="General">General</option>
+      </select>
+      <button id="registerBtn">Register</button>
+    </div>
+    <h2>📢 Alerts:</h2>
+    <ul id="alerts" class="alerts-list"></ul>
   </div>
-  <hr>
-  <h2>Alerts:</h2>
-  <ul id="alerts"></ul>
 
   <script>
     const socket = io();
     let notificationPermission = Notification.permission;
 
-    // Request notification permission
     if (Notification.permission !== 'granted') {
       Notification.requestPermission().then(perm => {
         notificationPermission = perm;
@@ -36,21 +37,20 @@
     document.getElementById('registerBtn').addEventListener('click', () => {
       const dept = document.getElementById('department').value;
       socket.emit('registerAuthority', dept);
-      alert(`Registered as ${dept} department`);
+      alert(`Registered as ${dept}`);
     });
 
     socket.on('newAlert', (report) => {
-      // Add to list
       const li = document.createElement('li');
       li.innerHTML = `
-        <strong>${report.type}</strong><br>
+        <strong>🔎 ${report.type}</strong><br>
         Location: ${report.location}<br>
         Time: ${new Date(report.timestamp).toLocaleString()}<br>
-        ${report.description}
+        ${report.description}<br>
+        ${report.phone ? '📞 Contact: ' + report.phone : ''}
       `;
       document.getElementById('alerts').prepend(li);
 
-      // Desktop notification
       if (notificationPermission === 'granted') {
         new Notification(`New ${report.type} Alert`, {
           body: `Location: ${report.location}\n${report.description}`,
